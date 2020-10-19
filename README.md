@@ -1,3 +1,3 @@
-# databaseslab2021
+# databasesLab2021
 
 DUTh EECE Databases course repo
