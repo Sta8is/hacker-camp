@@ -34,4 +34,5 @@ _<p style="text-align:center;">Φιωτάκης Ηλίας 57653</p>_
 
 ### Διάγραμμα οντοτήτων συσχετίσεων:
 
-![](/home/chritaka/repos/other/databaseslab2021/ED/ED_GR.png)
+![](/home/christ0s/repos/DUTh/databaseslab2021/ED/ED_GR.png)
+
