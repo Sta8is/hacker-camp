@@ -1,16 +1,16 @@
 # Σύστημα Εγγραφών - Διαχείρισης Κατασκήνωσης
 ![CampTent](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F03%2F24%2F02%2F40%2Fcamping-2169976_960_720.png&f=1&nofb=1)
 <p style="text-align:right;">Ξάνθη 2/11/20</p>
+<br>
+<br>
+## <p style="text-align:center;"><u>Ομάδα 2</u>:</p>
+_<p style="text-align:center;">Καρυπίδης Ευστάθιος 57556</p>_
+_<p style="text-align:center;">Τακαρίδης Χρήστος 57514</p>_
+_<p style="text-align:center;">Φιωτάκης Ηλίας 57653</p>_
 
-### <u>Ομάδα 2</u>:
+<div style="page-break-after: always; break-after: page;"></div>
 
-_Καρυπίδης Ευστάθιος 57556_
-_Τακαρίδης Χρήστος 57514_
-_Φιωτάκης Ηλίας 57653_
-
-
-
-## Μέρος 1ο:
+# <p style="text-align:center">Μέρος 1ο:</p>
 
 Η εργασία μας πραγματεύεται την δημιουργία ενός συστήματος εγγραφών κατασκηνωτών σε μία κατασκήνωση όπως επίσης την μετέπειτα διαχείριση των εγκαταστάσεων της κατασκήνωσης, του προσωπικού και των δραστηριοτήτων.
 
@@ -41,8 +41,10 @@ _Φιωτάκης Ηλίας 57653_
 υπαλλήλους. Αντίστοιχα κάθε κατασκηνωτής βρίσκεται σε μία εγκατάσταση αλλά σε μία εγκατάσταση μπορεί να βρίσκονται
 πολλοί κατασκηνωτές. 
 
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## Ερώτημα 2:
 
 ### Διάγραμμα οντοτήτων συσχετίσεων:
 
+![](/home/chritaka/repos/other/databaseslab2021/ED/ED_GR.png)
