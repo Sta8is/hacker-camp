@@ -2,21 +2,21 @@ CREATE DATABASE IF NOT EXISTS lab2021omada2_ChrisTest CHARACTER SET utf8mb4 COLL
 
 USE lab2021omada2_ChrisTest;
 
-CREATE TABLE IF NOT EXISTS Activity(
+CREATE TABLE ACTIVITY (
     Name VARCHAR(15) NOT NULL,
     Location VARCHAR(15) NULL,
-    StartTime INT,  /*ED check*/
-    EndTime INT, /*ED check*/
+    StartTime INT,
+    EndTime INT,
     PRIMARY KEY(Name) 
 );
 
-CREATE TABLE IF NOT EXISTS CampEmployee( /*ED check*/
-    AMKA INT,
-    sMedicalInsured BOOLEAN, /*ED case check*/
+CREATE TABLE CAMP_EMPLOYEE (
+    SSN INT,
+    sMedicalInsured BOOLEAN,
     Profession VARCHAR(15),
     Name VARCHAR(15),
     Surname VARCHAR(15),
-    Age INT,
+    AGE INT,
     Gender BOOLEAN,
     Role VARCHAR(15),
     YearsOfService INT,
