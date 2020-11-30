@@ -1,0 +1,74 @@
+/* Facility Insertions */
+INSERT INTO FACILITY VALUES("SpitakiEna",14);
+INSERT INTO FACILITY VALUES("SpitakiDio",14);
+INSERT INTO FACILITY VALUES("SpitakiTria",14);
+INSERT INTO FACILITY VALUES("SpitakiTessera",14);
+INSERT INTO FACILITY VALUES("GypedoBasket",100);
+INSERT INTO FACILITY VALUES("GypedoVoley",50);
+INSERT INTO FACILITY VALUES("GypedoToxovolias",50);
+INSERT INTO FACILITY VALUES("GypedoTennis",25);
+INSERT INTO FACILITY VALUES("GypedoPodosfairou",150);
+INSERT INTO FACILITY VALUES("Pisina",25);
+INSERT INTO FACILITY VALUES("Kouzina",10);
+INSERT INTO FACILITY VALUES("Trapezaria",200);
+INSERT INTO FACILITY VALUES("Iatreio",5);
+INSERT INTO FACILITY VALUES("Amfitheatro",500);
+INSERT INTO FACILITY VALUES("XwroiYgieinhs",50);
+
+/* FACILITY_WORKHOURS Insertions*/
+INSERT INTO FACILITY_WORKHOURS VALUES("SpitakiEna");    /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("SpitakiDio");    /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("SpitakiTria");    /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("SpitakiTessera");   /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("GypedoBasket");    /* 10 - 14, 16-19 */
+INSERT INTO FACILITY_WORKHOURS VALUES("GypedoVoley");    /* 10 - 14, 16-19 */
+INSERT INTO FACILITY_WORKHOURS VALUES("GypedoToxovolias");  /* 10 - 14 */
+INSERT INTO FACILITY_WORKHOURS VALUES("GypedoTennis",25); /* 10 - 14 */
+INSERT INTO FACILITY_WORKHOURS VALUES("GypedoPodosfairou");  /* 10 - 14 */
+INSERT INTO FACILITY_WORKHOURS VALUES("Pisina");   /* 12 - 14 */
+INSERT INTO FACILITY_WORKHOURS VALUES("Kouzina");    /* 7-10, 12-16, 18-21*/
+INSERT INTO FACILITY_WORKHOURS VALUES("Trapezaria"); / 8-9, 13-15:30, 19-20:30 */
+INSERT INTO FACILITY_WORKHOURS VALUES("Iatreio",5);  /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("Amfitheatro");   /*24h*/
+INSERT INTO FACILITY_WORKHOURS VALUES("XwroiYgieinhs");   /*24h*/
+
+
+/* ACTIVITY Insertions */
+INSERT INTO ACTIVITY VALUES ("Basket","Gypeda","2021-07-01 11:00:00", "2021-07-01 13:00:00","GypedoBasket");    /*SpitakiEna*/
+NSERT INTO ACTIVITY VALUES ("Rythmiki", "Gypeda","2021-07-01 16:00:00", "2021-07-01 17:00:00","GypedoBasket");  /*SpitakiEna*/
+INSERT INTO ACTIVITY VALUES ("Podosfairo","Gypeda","2021-07-01 17:00:00", "2021-07-01 18:30:00","GypedoPodosfairou");  /*SpitakiEna kai SpitakiDio*/
+INSERT INTO ACTIVITY VALUES ("Toxovolia","Gypeda","2021-07-01 11:00:00", "2021-07-01 13:00:00","GypedoToxovolias");  /*SpitakiDio*/
+INSERT INTO ACTIVITY VALUES ("Tennis", "Gypeda","2021-07-01 16:00:00", "2021-07-01 17:00:00","GypedoTennis");  /*SpitakiDio*/
+INSERT INTO ACTIVITY VALUES ("KolympiPisina","Pisines","2021-07-01 12:00:00", "2021-07-01 14:00:00","Pisina");  /*SpitakiTria*/
+INSERT INTO ACTIVITY VALUES ("Ekdromi","Vouno","2021-07-01 16:00:00", "2021-07-01 18:30:00",NULL);   /*SpitakiTria*/
+INSERT INTO ACTIVITY VALUES ("KolympiThalassa","Thalassa","2021-07-01 10:00:00", "2021-07-01 14:00:00",NULL);   /*SpitakiTessera*/         
+INSERT INTO ACTIVITY VALUES ("Basket","Gypeda","2021-07-01 17:00:00", "2021-07-01 18:30:00","GypedoBasket"); /caα*SpitakiTessera*/    
+
+/* CAMP_EMPLOYEE */
+INSERT INTO CAMP_EMPLOYEE VALUES(45266, "Antonis","Georgiou",25,0,1,"Gymnasths",2,0,NULL);
+INSERT INTO CAMP_EMPLOYEE VALUES(47954, "Markos","Triantafyllou",32,0,1,"Mageiras",5,0,"Kouzina");
+INSERT INTO CAMP_EMPLOYEE VALUES(15324, "Giannis","Bozinidis",19,0,1,"Foithths",1,0,"SpitakiEna");
+INSERT INTO CAMP_EMPLOYEE VALUES(58914, "Tassos","Ioannou",20,0,1,"Foitiths",1,1,"SpitakiDio");
+INSERT INTO CAMP_EMPLOYEE VALUES(45286, "Panagiota","Blaxopoulou",21,1,1,"Foititria",2,0,"SpitakiTria");
+INSERT INTO CAMP_EMPLOYEE VALUES(87595, "Georgia","Papadimitriou",20,1,1,"Foititria",1,1,"SpitakiTessera");
+INSERT INTO CAMP_EMPLOYEE VALUES(47746, "Alexandros","Xristodoulou",41,0,1,"Iatros",2,0,"Iatreio");
+INSERT INTO CAMP_EMPLOYEE VALUES(76574, "Xristos","Alexiou", 30, 0,1,"Fylakas",5,0,"Amfitheatro");
+INSERT INTO CAMP_EMPLOYEE VALUES(69745,"Maria","Anastasopoulou",42,1,1,"Katharistria",10,0,"XwroiYgieinhs");
+INSERT INTO CAMP_EMPLOYEE VALUES(58746, "Aggeliki","Athanasiou",25,1,1,"Gymnastria",2,0,NULL);
+
+/* RESPONSIBLE */
+
+
+/* PARTICIPATE*/
+
+
+
+/* CAMP TEAM */
+INSERT INTO CAMP_TEAM VALUES("tilemaxos",0,"11-13",13,NULL,15324);    
+INSERT INTO CAMP_TEAM VALUES("omiros",0,"14-16",13,NULL,58914); 
+INSERT INTO CAMP_TEAM VALUES("artimis",1,"11-13",13,NULL,45286); 
+INSERT INTO CAMP_TEAM VALUES("athina",1,"14-16",13,NULL,87595); 
+
+
+
+

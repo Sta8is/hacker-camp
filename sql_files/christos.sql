@@ -5,10 +5,11 @@ USE lab2021omada2_ChrisTest;
 CREATE TABLE ACTIVITY (
     A_Name VARCHAR(32) NOT NULL,
     A_Location VARCHAR(32) NULL,
-    StartTime INT,
-    EndTime INT,
+    A_StartTime TIME(2),
+    A_EndTime TIME(2),
+    FA_Name VARCHAR(32)
     PRIMARY KEY(A_Name),
-    FOREIGN KEY(FA_Name)
+    FOREIGN KEY(FA_Name) REFERENCES FACILITY(FA_Name)C
 );
 
 CREATE TABLE CAMP_EMPLOYEE (
