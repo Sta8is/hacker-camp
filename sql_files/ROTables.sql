@@ -1,13 +1,13 @@
-CREATE TABLE FACILITY(    
-    FA_Name VARCHAR(32) NOT NULL,    
-    FA_Capacity SMALLINT NULL,    
-    PRIMARY KEY(FA_Name)    
+CREATE TABLE FACILITY(
+    FA_Name VARCHAR(32) NOT NULL,
+    FA_Capacity SMALLINT NULL,
+    PRIMARY KEY(FA_Name)
 );
 
-CREATE TABLE FACILITY_WORKHOURS(    
+CREATE TABLE FACILITY_WORKHOURS(
     FA_StartTime TIME(2) NOT NULL,
     FA_EndTime TIME(2) NOT NULL,
-    FA_Name VARCHAR(32) NOT NULL,    
+    FA_Name VARCHAR(32) NOT NULL,
     PRIMARY KEY(FA_StartTime,FA_EndTime,FA_Name),
     FOREIGN KEY(FA_Name) REFERENCES FACILITY(FA_Name)
 );
@@ -65,22 +65,21 @@ CREATE TABLE PARTICIPATE(
     FOREIGN KEY(A_Name) REFERENCES ACTIVITY(A_Name),
     FOREIGN KEY(CT_Name) REFERENCES CAMP_TEAM(CT_Name)
 );
-
 CREATE TABLE CAMPER (
     CA_SSN int unsigned NOT NULL,   
     CA_Name varchar(32) NOT NULL,   
     CA_Surname varchar(64) NOT NULL,
     CA_Age int unsigned NOT NULL, 
-    CA_Pnum int unsigned NOT NULL,
+    CA_Pnum bigint NOT NULL,
     CA_Gender BOOL NOT NULL, /* 0: MALE, 1: FEMALE, 2: OTHER */
     CA_KoI tinyint NOT NULL, /* 0: Compatable,1: None*/
     CA_YoR bigint NOT NULL,
     CA_D_Name varchar(32) NOT NULL, 
-    CA_D_Pnum int unsigned NOT NULL,
+    CA_D_Pnum BIGINT NOT NULL,
     CA_P_Name varchar(32) NOT NULL,   
     CA_P_Surname varchar(64) NOT NULL,
     CA_P_Email varchar(64) NOT NULL,
-    CA_P_Pnum int unsigned NOT NULL,
+    CA_P_Pnum BIGINT NOT NULL,
     CT_Name varchar(32) NOT NULL,
     FA_Name varchar(32) NOT NULL,
     PRIMARY KEY(CA_SSN),
