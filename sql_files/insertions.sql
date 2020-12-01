@@ -32,3 +32,4 @@ INSERT into CA_INFECTIOUS_DISEASE values(21828, Koronoios)
 INSERT into CA_ALLERGY values(13714, Verikoka);
 INSERT into CA_ALLERGY values(51127, Fistikia);
 INSERT into CA_ALLERGY values(31827, Mpiskota Papadopoylou);
+INSERT into CA_ALLERGY values(81321, Gala);
