@@ -53,16 +53,16 @@ INSERT INTO ACTIVITY VALUES ("Ekdromi","Vouno","2021-07-01 16:00:00", "2021-07-0
 INSERT INTO ACTIVITY VALUES ("KolympiThalassa","Thalassa","2021-07-01 10:00:00", "2021-07-01 13:30:00",NULL);   /*SpitakiTessera*/         
 
 /* CAMP_EMPLOYEE */
-INSERT INTO CAMP_EMPLOYEE VALUES(45266, "Antonis","Georgiou",25,0,1,"Gymnasths",2,0,NULL);
-INSERT INTO CAMP_EMPLOYEE VALUES(47954, "Markos","Triantafyllou",32,0,1,"Mageiras",5,0,"Kouzina");
-INSERT INTO CAMP_EMPLOYEE VALUES(15324, "Giannis","Bozinidis",19,0,1,"Foithths",1,0,"SpitakiEna");
-INSERT INTO CAMP_EMPLOYEE VALUES(58914, "Tassos","Ioannou",20,0,1,"Foitiths",1,1,"SpitakiDio");
-INSERT INTO CAMP_EMPLOYEE VALUES(45286, "Panagiota","Blaxopoulou",21,1,1,"Foititria",2,0,"SpitakiTria");
-INSERT INTO CAMP_EMPLOYEE VALUES(87595, "Georgia","Papadimitriou",20,1,1,"Foititria",1,1,"SpitakiTessera");
-INSERT INTO CAMP_EMPLOYEE VALUES(47746, "Alexandros","Xristodoulou",41,0,1,"Iatros",2,0,"Iatreio");
-INSERT INTO CAMP_EMPLOYEE VALUES(76574, "Xristos","Alexiou", 30, 0,1,"Fylakas",5,0,"Amfitheatro");
-INSERT INTO CAMP_EMPLOYEE VALUES(69745, "Maria","Anastasopoulou",42,1,1,"Katharistria",10,0,"XwroiYgieinhs");
-INSERT INTO CAMP_EMPLOYEE VALUES(58746, "Aggeliki","Athanasiou",25,1,1,"Gymnastria",2,0,NULL);
+INSERT INTO CAMP_EMPLOYEE VALUES(45266, "Antonis","Georgiou",25,0, "Gymnasths",1,"Gymnasths",2,0,NULL);
+INSERT INTO CAMP_EMPLOYEE VALUES(47954, "Markos","Triantafyllou",32,0, "Mageiras",1,"Mageiras",5,0,"Kouzina");
+INSERT INTO CAMP_EMPLOYEE VALUES(15324, "Giannis","Bozinidis",19,0, "Omadarxis",1,"Foithths",1,0,"SpitakiEna");
+INSERT INTO CAMP_EMPLOYEE VALUES(58914, "Tassos","Ioannou",20,0, "Omadarxis",1,"Foitiths",1,1,"SpitakiDio");
+INSERT INTO CAMP_EMPLOYEE VALUES(45286, "Panagiota","Blaxopoulou",21,1, "Omadarxis", 1,"Foititria",2,0,"SpitakiTria");
+INSERT INTO CAMP_EMPLOYEE VALUES(87595, "Georgia","Papadimitriou",20,1, "Omadarxis",1,"Foititria",1,1,"SpitakiTessera");
+INSERT INTO CAMP_EMPLOYEE VALUES(47746, "Alexandros","Xristodoulou",41,0, "Iatros",1,"Iatros",2,0,"Iatreio");
+INSERT INTO CAMP_EMPLOYEE VALUES(76574, "Xristos","Alexiou", 30, 0, "Fylakas",1,"Fylakas",5,0,"Amfitheatro");
+INSERT INTO CAMP_EMPLOYEE VALUES(69745, "Maria","Anastasopoulou",42,1, "Katharistria",1,"Katharistria",10,0,"XwroiYgieinhs");
+INSERT INTO CAMP_EMPLOYEE VALUES(58746, "Aggeliki","Athanasiou",25,1,"Gymnastria",1,"Gymnastria",2,0,NULL);
 
 /* CAMP TEAM */
 INSERT INTO CAMP_TEAM VALUES("tilemaxos",0,"11-13",13,NULL,15324);    
