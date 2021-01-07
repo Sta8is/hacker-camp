@@ -1,0 +1,33 @@
+3.1
+ΘΈΛΟΥΝ ΔΙΟΡΘΩΣΗ ΟΙ ΕΓΓΡΑΦΕΣ
+ONLY JOIN:
+ SELECT CE_NAME,CE_SURNAME,R.A_Name,CE_ROLE FROM CAMP_EMPLOYEE CE JOIN RESPONSIBLE R ON CE.CE_SSN = R.CE_SSN;
+LEFT OUTER JOIN:
+SELECT CE_NAME,CE_SURNAME,R.A_Name,CE_ROLE FROM CAMP_EMPLOYEE CE LEFT OUTER JOIN RESPONSIBLE R ON CE.CE_SSN = R.CE_SSN;
+
+3.2
+//SELECT COUNT(CA.CA_SSN) FROM CAMPER CA ,CA_ALLERGY CAA WHERE CA.CA_SSN = CAA.CA_SSN AND Allergy = "Mpiskota";
+SELECT COUNT(CA_SSN) from CAMPER;
+SELECT max(CA_Age),min(CA_Age),avg(CA_Age) FROM CAMPER CA WHERE CT_NAME = "Tilemaxos";
+
+3.3
+-θΕΛΕΙ ΜΙΑ ΠΡΟΣΘΉΚΗ
+COUNT(R_HOURS) ,CE_NAME, A_NAME FROM RESPONSIBLE
+
+
+
+2.1 
+Προηγούμενες εργασίες
+2.2 
+δεν το εξήγησε
+
+
+3 
+ειναι ίδιο με το δύο αλλα εξαρτάται από την δική μας βάση
+
+4
+b Συνήθως στου πινακες με πολλά γνωρισματα και που χρησιμοποιούνται συχνά σε queries
+c Με create view μηχανισμος ασφαλειας και δικαιοδοσίας(πχ μπορούμε ενα ερώτημα για τον γιατρο της κατασκήνωσης ναα επιστρέφει ολες τις πληροφοριες για αλλεγιες, ασθενιες, ονομα κατασκηνωτή, τηλ γιατρου)
+
+5
+Το έκανε ο ηλίας
