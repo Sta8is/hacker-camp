@@ -649,7 +649,25 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
 
    2. Stored Function:
 
-5. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων αυτόματη ανανέωση όψεων.
+      ```sql
+      DELIMITER $$
+      CREATE FUNCTION getCurrentNum()
+      RETURNS INT
+      BEGIN
+      DECLARE campers INT;
+      DECLARE employees INT;
+      DECLARE sum INT;
+      SELECT COUNT(*) FROM CAMPER INTO campers;
+      SELECT COUNT(*) FROM CAMP_EMPLOYEE INTO employees;
+      SET sum = campers + employees;
+      RETURN sum;
+      END$$
+      DELIMITER ;
+      ```
+
+      
+
+5. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων ενημέρωση για την δύναμη όλης της κατασκήνωσης.
 
    ```sql
    DELIMITER $$
@@ -657,9 +675,11 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
    AFTER INSERT ON CAMPER
    FOR EACH ROW
    BEGIN
-   UPDATE CAMPER SET CA_YoR = curdate();
+   CALL getCurrentNum();
    END$$
    DELIMITER ;
    ```
 
-   
+   ## Ερώτημα 5
+
+   [Frontend](https://dblab.nonrelevant.net/~lab2021omada2/website/html/index.php)
