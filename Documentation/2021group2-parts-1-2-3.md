@@ -486,6 +486,7 @@ b)
 ```
 
 2. _Για να χωριστούν σε ομάδες οι κατασκηνωτές από ένα συγκεκριμένο σπιτάκι με βάση την ηλικία.(Χρήση min,max,avg)_
+
 ```SELECT max(CA_Age),min(CA_Age),avg(CA_Age) FROM CAMPER CA WHERE CT_NAME = "Tilemaxos";```
 
   ````bash
@@ -497,6 +498,36 @@ b)
   ````
 
 c)
+
+1. _Ενημέρωση πληρότητας στις ομάδες κατασκηνωτών._
+
+```SELECT CT.CT_Name,COUNT(*),CT_Maxcnum FROM CAMPER CA,CAMP_TEAM CT WHERE CT.CT_Name = CA.CT_Name GROUP BY CT_Name;```
+
+```bash
++-----------+----------+------------+
+| CT_Name   | COUNT(*) | CT_Maxcnum |
++-----------+----------+------------+
+| artemis   |        4 |         13 |
+| athina    |        7 |         13 |
+| omiros    |        4 |         13 |
+| tilemaxos |        4 |         13 |
++-----------+----------+------------+
+```
+
+2. _Προβολή των υπαλλήλων που είναι υπεύθυνοι για μία δραστηριότητα που διαρκεί λιγότερο από 2 ώρες με σκοπό την ανάθεση και άλλες δραστηριότητες._
+
+```SELECT CE.CE_SSN,CE_Name FROM RESPONSIBLE R,CAMP_EMPLOYEE CE WHERE CE.CE_SSN=R.CE_SSN  GROUP BY CE_SSN HAVING sum(R_Hours)<2;```
+
+```bash
++--------+---------+
+| CE_SSN | CE_Name |
++--------+---------+
+|  15324 | Giannis |
+|  45266 | Antonis |
++--------+---------+
+```
+
+
 
 ## Ερώτημα 2:
 
