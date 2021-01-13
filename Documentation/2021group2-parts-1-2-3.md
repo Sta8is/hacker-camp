@@ -300,6 +300,8 @@ INSERT into CA_ALLERGY values(51127, "Fistikia");
 INSERT into CA_ALLERGY values(31827, "Mpiskota");
 ```
 
+# <p style="text-align:center">Μέρος 3ο:</p>
+
 ### Ερωτήματα στην βάση:
 
 1. `SELECT CT_Name ,CT_AgeArea FROM CAMP_TEAM;`
@@ -428,9 +430,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
    +-------------------+-------------+--------------+-------------+
    ```
 
-   
-
-   ## Ερώτημα 1:
+## Ερώτημα 1:
 
    ### Ερωτήματα στην βάση:
 
@@ -566,15 +566,17 @@ R5(<u>I</u>, G, D)
 
 ## Ερώτημα 3:
 
-a)Για τον πίνακα CAMPER έχουμε:
+Για τον πίνακα CAMPER έχουμε:
 
-Προφανές υπερκλειδί είναι το R{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}
+a) Προφανές υπερκλειδί είναι το 
 
-H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  {CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name} , επομένως το {CA_SSN} είναι ένα υποψήφιο κλειδί για την R.
+`R{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}`
 
-H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  {CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name} , επομένως το {CA_SSN} είναι ένα υποψήφιο κλειδί για την R.
+H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  `{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}` , επομένως το `{CA_SSN}` είναι ένα υποψήφιο κλειδί για την `R`.
 
-Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα CA_SSN αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
+H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  `{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}` , επομένως το `{CA_SSN}` είναι ένα υποψήφιο κλειδί για την `R`.
+
+Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα `CA_SSN` αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
 
 b) Ο πίνακας CAMPER είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
 
@@ -582,14 +584,82 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
 
 Για τον πίνακα CAMP_EMPLOYEE έχουμε:
 
-a)Προφανές υπερκλειδί είναι το R{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}.
+a)Προφανές υπερκλειδί είναι το `R{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`.
 
-Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι {CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}, επομένως το {CE_SSN} είναι ένα υποψήφιο κλειδί για την R.
+Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι `{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`, επομένως το `{CE_SSN}` είναι ένα υποψήφιο κλειδί για την `R`.
 
-Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι {CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}, επομένως το {CE_SSN} είναι ένα υποψήφιο κλειδί για την R.
+Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι `{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`, επομένως το `{CE_SSN}` είναι ένα υποψήφιο κλειδί για την R.
 
-Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα CE_SSN αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
+Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα `CE_SSN` αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
 
 b) Ο πίνακας CAMP_EMPLOYEE είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
 
 c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μεταβατικές εξαρτήσεις, άρα είναι ήδη και σε 3NF.
+
+## Ερώτημα 4:
+
+1. Κατά την δημιουργία κατασκηνωτών ενημέρωση βάσης μόνον εάν ενημερωθούν όλοι οι πίνακες (CAMPER + πλειότιμα):
+
+   ```sql
+   START TRANSACTION;
+   INSERT INTO CAMPER values(13114, "Polixronis", "Xaralampou", 14, 6939
+   435892, 1, 0, curdate(), "Theodos Kolokotronis", 6932415812, "Maria",
+    "Magdalini", "maraki64@outlook.com", 6932415662, "omiros", "SpitakiD
+   io");
+   INSERT INTO CA_MEDICINE values(13114, "Charak");
+   COMMIT;
+   ```
+
+2. Ευρετήριο στον πίνακα τον κατασκηνωτών με βάση το Ονοματεπώνυμο για γρήγορότερη αναζήτηση:
+
+   ```sql
+   CREATE INDEX CA_NameSearch_idx /* underscore identifies index property */
+   ON CAMPER (CA_Name, CA_Surname);
+   ```
+
+3. 1. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τις δραστηριότητες της κατασκήνωσης και αποκρύπτουν ευαίσθητα δεδομένα.
+
+      ```sql
+      CREATE OR REPLACE VIEW CAMPER_PUBLIC AS
+      SELECT CA_Name, CA_Surname, CA_Age, CA_Gender
+      FROM CAMPER;
+      ```
+
+   2. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τον γιατρό για την ιατροφαρμακευτική περίθαλψη.
+
+      ```sql
+      CREATE OR REPLACE VIEW CAMPER_MEDICAL_INFO AS
+      SELECT CAMPER.CA_SSN, CAMPER.CA_Name, CAMPER.CA_Surname, CAMPER.CA_Age, CAMPER.CA_D_Name, CAMPER.CA_D_Pnum, CA_MEDICINE.Medicine
+      FROM CAMPER, CA_MEDICINE
+      WHERE CAMPER.CA_SSN = CA_MEDICINE.CA_SSN
+      ORDER BY CAMPER.CA_Surname;
+      ```
+
+4. 1. Stored Procedure:
+
+      ```sql
+      DELIMITER $$
+      CREATE PROCEDURE parseEmail()
+      BEGIN
+      	SELECT CA_P_Email FROM CAMPER;
+      END $$
+      DELIMITER ;
+      CALL parseEmail();
+      ```
+
+   2. Stored Function:
+
+5. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων αυτόματη ανανέωση όψεων.
+
+   ```sql
+   DELIMITER $$
+   CREATE TRIGGER kappa
+   AFTER INSERT ON CAMPER
+   FOR EACH ROW
+   BEGIN
+   UPDATE CAMPER SET CA_YoR = curdate();
+   END$$
+   DELIMITER ;
+   ```
+
+   
