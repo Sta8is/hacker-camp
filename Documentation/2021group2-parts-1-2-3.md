@@ -671,15 +671,27 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
 
    ```sql
    DELIMITER $$
-   CREATE TRIGGER kappa
+   CREATE TRIGGER updateCampTeamNum
    AFTER INSERT ON CAMPER
    FOR EACH ROW
    BEGIN
-   CALL getCurrentNum();
-   END$$
+   
+   DECLARE ct_num int;
+   
+   SELECT CT_Cnum
+INTO @ct_num
+   FROM CAMP_TEAM
+WHERE CAMP_TEAM.CT_Name = NEW.CT_Name;
+   
+   UPDATE CAMP_TEAM
+   SET CT_Cnum = @ct_num + 1
+   WHERE CT_Name = NEW.CT_Name;
+   
+   END;
+   $$
    DELIMITER ;
    ```
-
+   
    ## Ερώτημα 5
-
+   
    [Frontend](https://dblab.nonrelevant.net/~lab2021omada2/website/html/index.php)
