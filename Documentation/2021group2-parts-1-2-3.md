@@ -378,6 +378,8 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 2 rows in set (0.00 sec)
 ```
 
+<div style="page-break-after: always; break-after: page;"></div>
+
 #### 6. ```SELECT CT.CT_Name,P.A_Name,A.A_Location from CAMP_TEAM CT,PARTICIPATE P,ACTIVITY A WHERE CT.CT_Name = P.CT_Name AND P.A_Name = A.A_Name ORDER BY CT_NAME;``` 
 
    _Ενημέρωση των κατασκηνωτών για το καθημερινό τους πρόγραμμα._
@@ -624,29 +626,31 @@ ORDER BY CAMPER.CA_Surname;
 
 #### 1. Stored Procedure:
 ```sql
-  DELIMITER $$
-  CREATE PROCEDURE parseEmail()
-  BEGIN
-  	SELECT CA_P_Email FROM CAMPER;
-  END $$
-  DELIMITER ;
-  CALL parseEmail();
+DELIMITER $$
+CREATE PROCEDURE parseEmail()
+BEGIN
+	SELECT CA_P_Email FROM CAMPER;
+END $$
+DELIMITER ;
+CALL parseEmail();
 ```
 
    #### 2. Stored Function:
    ```sql
 DELIMITER $$
-CREATE FUNCTION incrEmpYears(
-    ssn INT
-)
+CREATE FUNCTION incrEmpYears(ssn INT)
 RETURNS INT
 BEGIN
-	DECLARE years int;
-	SELECT YearsOfService into years FROM CAMP_EMPLOYEE WHERE CE_SSN=ssn;
-	SET years = years + 1;
-	RETURN years;
+DECLARE years int;
+SELECT YearsOfService into years FROM CAMP_EMPLOYEE WHERE CE_SSN=ssn;
+SET years = years + 1;
+RETURN years;
 END; $$
 DELIMITER ;
+
+/* Use the function */
+UPDATE CAMP_EMPLOYEE
+SET YearsOfService = incrEmpYears(12345) WHERE CE_SSN=12345;
    ```
 
 ### e. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων ενημέρωση για την δύναμη όλης της κατασκήνωσης.
