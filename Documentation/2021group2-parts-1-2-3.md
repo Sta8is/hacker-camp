@@ -300,11 +300,9 @@ INSERT into CA_ALLERGY values(51127, "Fistikia");
 INSERT into CA_ALLERGY values(31827, "Mpiskota");
 ```
 
-# <p style="text-align:center">Μέρος 3ο:</p>
-
 ### Ερωτήματα στην βάση:
 
-1. `SELECT CT_Name ,CT_AgeArea FROM CAMP_TEAM;`
+#### 1. `SELECT CT_Name ,CT_AgeArea FROM CAMP_TEAM;`
 
    _Σε περίπτωση που υπάρχουν δραστηριότητες ηλικιών ευκολύνεται η μοιρασιά των κατασκηνωτών_
 ```sql
@@ -319,7 +317,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 4 rows in set (0.00 sec)
 ```
 
-2. `SELECT * FROM CA_CHRONIC_DISEASE;`
+#### 2. `SELECT * FROM CA_CHRONIC_DISEASE;`
 
    _Προς ενημέρωση του ιατρού για την πλήρη ιατροφαρμακευτική περίθαλψη των κατασκηνωτών_
 ```sql
@@ -334,7 +332,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 4 rows in set (0.01 sec)
 ```
 
-3. `SELECT FA_StartTime, FA_EndTime FROM FACILITY_WORKHOURS WHERE FA_Name="Pisina";`
+#### 3. `SELECT FA_StartTime, FA_EndTime FROM FACILITY_WORKHOURS WHERE FA_Name="Pisina";`
 
    _Για να είναι γνωστό στους διοργανωτές ποιες ώρες είναι ελεύθερη η πισίνα_
 ```sql
@@ -346,7 +344,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 1 row in set (0.00 sec)
 ```
 
-4. `SELECT CE_Name, CE_Age, CE_Role FROM CAMP_EMPLOYEE ORDER BY CE_Age;`
+#### 4. `SELECT CE_Name, CE_Age, CE_Role FROM CAMP_EMPLOYEE ORDER BY CE_Age;`
 
    _Για να μπορούν τα στελέχη να μοιραστούν στις αντίστοιχες εργασίες που προκύπτουν στην κατασκήνωση_
 ```sql
@@ -367,7 +365,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 10 rows in set (0.00 sec)
 ```
 
-5. `SELECT CA_Name, CA_Surname, CA_Age, CA_D_Name, CA_D_Pnum, CA_P_Email, CA_P_Pnum FROM CAMPER WHERE CA_P_Name="Kostas" AND CA_P_Surname="Karapanos" ORDER BY CA_Age;`
+#### 5. `SELECT CA_Name, CA_Surname, CA_Age, CA_D_Name, CA_D_Pnum, CA_P_Email, CA_P_Pnum FROM CAMPER WHERE CA_P_Name="Kostas" AND CA_P_Surname="Karapanos" ORDER BY CA_Age;`
 
    _Εύρεση κατασκηνωτών με συγγένια και ηλικιακή ταξινόμησή τους_
 ```sql
@@ -380,7 +378,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 2 rows in set (0.00 sec)
 ```
 
-6. ```SELECT CT.CT_Name,P.A_Name,A.A_Location from CAMP_TEAM CT,PARTICIPATE P,ACTIVITY A WHERE CT.CT_Name = P.CT_Name AND P.A_Name = A.A_Name ORDER BY CT_NAME;``` 
+#### 6. ```SELECT CT.CT_Name,P.A_Name,A.A_Location from CAMP_TEAM CT,PARTICIPATE P,ACTIVITY A WHERE CT.CT_Name = P.CT_Name AND P.A_Name = A.A_Name ORDER BY CT_NAME;``` 
 
    _Ενημέρωση των κατασκηνωτών για το καθημερινό τους πρόγραμμα._
 
@@ -397,7 +395,7 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
 +-----------+-----------+------------+
 ```
 
-7. ```SELECT FA.FA_Name,FA_Capacity,FA_StartTime,FA_EndTime FROM FACILITY FA,FACILITY_WORKHOURS FW where FA.FA_Name = FW.FA_Name order by FA.FA_Name;``` 
+#### 7. ```SELECT FA.FA_Name,FA_Capacity,FA_StartTime,FA_EndTime FROM FACILITY FA,FACILITY_WORKHOURS FW where FA.FA_Name = FW.FA_Name order by FA.FA_Name;``` 
 
     _Για ενημέρωση ως προς τις ώρες λειτουργίας και την χωρητικότητα των διάφορων υποδομών της κατασκήνωσης._
 
@@ -429,12 +427,13 @@ INSERT into CA_ALLERGY values(31827, "Mpiskota");
    | XwroiYgieinhs     |          50 | 00:00:00.00  | 23:59:59.00 |
    +-------------------+-------------+--------------+-------------+
    ```
+# <p style="text-align:center">Μέρος 3ο:</p>
 
 ## Ερώτημα 1:
 
    ### Ερωτήματα στην βάση:
 
-a) _Για ενημέρωση των κατασκηνωτών ποιος ο υπεύθυνος για κάθε δραστηριότητα._
+### a. _Για ενημέρωση των κατασκηνωτών ποιος ο υπεύθυνος για κάθε δραστηριότητα._
 
 ``` SELECT CE_NAME,CE_SURNAME,R.A_Name,CE_ROLE FROM CAMP_EMPLOYEE CE JOIN RESPONSIBLE R ON CE.CE_SSN = R.CE_SSN;```
 
@@ -471,9 +470,9 @@ a) _Για ενημέρωση των κατασκηνωτών ποιος ο υπ
 +------------+----------------+-----------+--------------+
 ```
 
-b) 
+### b.
 
-1. _Υπολογισμός αριθμού κατασκηνωτών με σκοπό την παρασκευή μερίδων φαγητού.(Χρήση count)_
+#### 1. _Υπολογισμός αριθμού κατασκηνωτών με σκοπό την παρασκευή μερίδων φαγητού.(Χρήση count)_
 
 ```SELECT COUNT(CA_SSN) from CAMPER;```
 
@@ -485,7 +484,7 @@ b)
 +---------------+
 ```
 
-2. _Για να χωριστούν σε ομάδες οι κατασκηνωτές από ένα συγκεκριμένο σπιτάκι με βάση την ηλικία.(Χρήση min,max,avg)_
+#### 2._Για να χωριστούν σε ομάδες οι κατασκηνωτές από ένα συγκεκριμένο σπιτάκι με βάση την ηλικία.(Χρήση min,max,avg)_
 
 ```SELECT max(CA_Age),min(CA_Age),avg(CA_Age) FROM CAMPER CA WHERE CT_NAME = "Tilemaxos";```
 
@@ -497,9 +496,9 @@ b)
   +-------------+-------------+-------------+
   ````
 
-c)
+### c.
 
-1. _Ενημέρωση πληρότητας στις ομάδες κατασκηνωτών._
+#### 1._Ενημέρωση πληρότητας στις ομάδες κατασκηνωτών._
 
 ```SELECT CT.CT_Name,COUNT(*),CT_Maxcnum FROM CAMPER CA,CAMP_TEAM CT WHERE CT.CT_Name = CA.CT_Name GROUP BY CT_Name;```
 
@@ -514,7 +513,7 @@ c)
 +-----------+----------+------------+
 ```
 
-2. _Προβολή των υπαλλήλων που είναι υπεύθυνοι για μία δραστηριότητα που διαρκεί λιγότερο από 2 ώρες με σκοπό την ανάθεση και άλλες δραστηριότητες._
+#### 2._Προβολή των υπαλλήλων που είναι υπεύθυνοι για μία δραστηριότητα που διαρκεί λιγότερο από 2 ώρες με σκοπό την ανάθεση και άλλες δραστηριότητες._
 
 ```SELECT CE.CE_SSN,CE_Name FROM RESPONSIBLE R,CAMP_EMPLOYEE CE WHERE CE.CE_SSN=R.CE_SSN  GROUP BY CE_SSN HAVING sum(R_Hours)<2;```
 
@@ -533,8 +532,7 @@ c)
 
 Έστω η καθολική σχέση R = {A,B,C,D,E,F,G,H,I,J}  και το σύνολο συναρτησιακών εξαρτήσεων { {A}->{J}, {E,A}->{F}, {I}->{G,D}, {E}->{I,Η}, {J}->{C,B} }.
 
-α) Προφανές υπερκλειδί για την R είναι το  {A,B,C,D,E,F,G,H,I,J}.
-
+### a.Προφανές υπερκλειδί για την R είναι το  {A,B,C,D,E,F,G,H,I,J}.
 - Τα Α,Ε δεν μπορούν να αφαιρεθούν καθώς είναι μη εξαρτημένα.
 - Το J μπορεί να αφαιρεθεί καθώς {A}->{J}
 - Το F μπορεί να αφαιρεθεί καθώς {E,A}->{F}
@@ -544,15 +542,14 @@ c)
 
 Η κλειστότητα $(A,E)^+$ με βάση την F είναι {A,B,C,D,E,F,G,H,I,J} και επομένως το {Α,Β} είναι ένα υποψήφιο κλειδί για την R.
 
-β) Η κανονικοποίηση σε 2NF είναι:
-
+### b. Η κανονικοποίηση σε 2NF είναι:
 R1(<u>A</u>, J, C, B)
 
 R2(<u>E</u>, <u>A</u>, F)
 
 R3(<u>E</u>, I, H, G, D)
 
-γ) Η κανονικοποίηση σε 3NF είναι:
+### c. Η κανονικοποίηση σε 3NF είναι:
 
 R1(<u>A</u>, J)
 
@@ -568,8 +565,7 @@ R5(<u>I</u>, G, D)
 
 Για τον πίνακα CAMPER έχουμε:
 
-a) Προφανές υπερκλειδί είναι το 
-
+### a. Προφανές υπερκλειδί είναι το 
 `R{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}`
 
 H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  `{CA_SSN, CA_Name, CA_Surname, CA_Age, CA_Pnum, CA_Gender, CA_KoI, CA_YoR, CA_D_Name, CA_D_Pnum, CA_P_Name, CA_P_Surname, CA_P_Email, CA_P_Pnum, CT_Name,FA_Name}` , επομένως το `{CA_SSN}` είναι ένα υποψήφιο κλειδί για την `R`.
@@ -578,28 +574,22 @@ H κλειστότητα $(CA \_ SSN)^+$ με βάση την F είναι  `{CA
 
 Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα `CA_SSN` αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
 
-b) Ο πίνακας CAMPER είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
-
-c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μεταβατικές εξαρτήσεις, άρα είναι ήδη και σε 3NF.
-
+### b. Ο πίνακας CAMPER είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
+### c. Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μεταβατικές εξαρτήσεις, άρα είναι ήδη και σε 3NF.
 Για τον πίνακα CAMP_EMPLOYEE έχουμε:
 
-a)Προφανές υπερκλειδί είναι το `R{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`.
-
+#### a. Προφανές υπερκλειδί είναι το `R{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`.
 Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι `{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`, επομένως το `{CE_SSN}` είναι ένα υποψήφιο κλειδί για την `R`.
 
 Η κλειστότητα $(CE\_ SSN)^+$ με βάση την F είναι `{CE_SSN, CE_Name, CE_Surname, CE_Age, CE_Gender, CE_RoleI, MedicalInsured, Profession, YearsOfService, IsVolunteer, FA_Name}`, επομένως το `{CE_SSN}` είναι ένα υποψήφιο κλειδί για την R.
 
 Από τις συναρτησιακές εξαρτήσεις προκύπτει ότι το γνώρισμα `CE_SSN` αποτελεί υποψήφιο κλειδί και μπορεί να επιλεχθεί ως πρωτεύον κλειδί. Παρατηρούμε ότι το κλειδί που διαλέξαμε είναι ίδιο με αυτό που προκύπτει από τις συναρτησιακές εξαρτήσεις.
 
-b) Ο πίνακας CAMP_EMPLOYEE είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
-
-c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μεταβατικές εξαρτήσεις, άρα είναι ήδη και σε 3NF.
-
+#### b. Ο πίνακας CAMP_EMPLOYEE είναι σε κανονική μορφή 1NF καθώς υπάρχουν μόνο ατομικές τιμές για τα γνωρίσματα. Ακόμη, το πρωτεύον αποτελείται από ένα γνώρισμα μόνο και συνεπώς δεν χρειάζεται να γίνει έλεγχος(υπάρχει πλήρη συναρτησιακή εξάρτηση). Άρα, ο πίνακας είναι ήδη κανονικοποιημένος σε 2NF.
+#### c. Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μεταβατικές εξαρτήσεις, άρα είναι ήδη και σε 3NF.
 ## Ερώτημα 4:
 
-1. Κατά την δημιουργία κατασκηνωτών ενημέρωση βάσης μόνον εάν ενημερωθούν όλοι οι πίνακες (CAMPER + πλειότιμα):
-
+### a. Κατά την δημιουργία κατασκηνωτών ενημέρωση βάσης μόνον εάν ενημερωθούν όλοι οι πίνακες (CAMPER + πλειότιμα):
    ```sql
    START TRANSACTION;
    INSERT INTO CAMPER values(13114, "Polixronis", "Xaralampou", 14, 6939
@@ -610,23 +600,21 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
    COMMIT;
    ```
 
-2. Ευρετήριο στον πίνακα τον κατασκηνωτών με βάση το Ονοματεπώνυμο για γρήγορότερη αναζήτηση:
-
+### b. Ευρετήριο στον πίνακα τον κατασκηνωτών με βάση το Ονοματεπώνυμο για γρήγορότερη αναζήτηση:
    ```sql
    CREATE INDEX CA_NameSearch_idx /* underscore identifies index property */
    ON CAMPER (CA_Name, CA_Surname);
    ```
 
-3. 1. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τις δραστηριότητες της κατασκήνωσης και αποκρύπτουν ευαίσθητα δεδομένα.
-
+### c.
+   #### 1. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τις δραστηριότητες της κατασκήνωσης και αποκρύπτουν ευαίσθητα δεδομένα.
       ```sql
       CREATE OR REPLACE VIEW CAMPER_PUBLIC AS
       SELECT CA_Name, CA_Surname, CA_Age, CA_Gender
       FROM CAMPER;
       ```
 
-   2. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τον γιατρό για την ιατροφαρμακευτική περίθαλψη.
-
+   #### 2. Όψη του πίνακα των κατασκηνωτών για προβολή στοιχείων που απασχολούν τον γιατρό για την ιατροφαρμακευτική περίθαλψη.
       ```sql
       CREATE OR REPLACE VIEW CAMPER_MEDICAL_INFO AS
       SELECT CAMPER.CA_SSN, CAMPER.CA_Name, CAMPER.CA_Surname, CAMPER.CA_Age, CAMPER.CA_D_Name, CAMPER.CA_D_Pnum, CA_MEDICINE.Medicine
@@ -635,8 +623,9 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
       ORDER BY CAMPER.CA_Surname;
       ```
 
-4. 1. Stored Procedure:
+### d.
 
+#### 1. Stored Procedure:
       ```sql
       DELIMITER $$
       CREATE PROCEDURE parseEmail()
@@ -647,8 +636,7 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
       CALL parseEmail();
       ```
 
-   2. Stored Function:
-
+   #### 2. Stored Function:
       ```sql
       DELIMITER $$
       CREATE FUNCTION getCurrentNum()
@@ -665,33 +653,18 @@ c) Ο πίνακας είναι σε 2NF. Ακόμη, δεν υπάρχουν μ
       DELIMITER ;
       ```
 
-      
-
-5. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων ενημέρωση για την δύναμη όλης της κατασκήνωσης.
-
+### e. Κατά την καταχώρηση κατασκηνωτών και υπαλλήλων ενημέρωση για την δύναμη όλης της κατασκήνωσης.
    ```sql
    DELIMITER $$
-   CREATE TRIGGER updateCampTeamNum
+   CREATE TRIGGER kappa
    AFTER INSERT ON CAMPER
    FOR EACH ROW
    BEGIN
-   
-   DECLARE ct_num int;
-   
-   SELECT CT_Cnum
-INTO @ct_num
-   FROM CAMP_TEAM
-WHERE CAMP_TEAM.CT_Name = NEW.CT_Name;
-   
-   UPDATE CAMP_TEAM
-   SET CT_Cnum = @ct_num + 1
-   WHERE CT_Name = NEW.CT_Name;
-   
-   END;
-   $$
+   CALL getCurrentNum();
+   END$$
    DELIMITER ;
    ```
-   
+
    ## Ερώτημα 5
-   
+
    [Frontend](https://dblab.nonrelevant.net/~lab2021omada2/website/html/index.php)
