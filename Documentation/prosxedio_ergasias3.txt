@@ -1,0 +1,36 @@
+Διόρθωση εργασίας 2
+Να προστεθούν
+
+SELECT CT.CT_Name,P.A_Name,A.A_Location from CAMP_TEAM CT,PARTICIPATE P,ACTIVITY A WHERE CT.CT_Name = P.CT_Name AND P.A_Name = A.A_Name ORDER BY CT_NAME;  // Για ενημέρωση των κατασκηνωτών για το καθημερινό πρόγραμμα.
+SELECT FA.FA_Name,FA_Capacity,FA_StartTime,FA_EndTime FROM FACILITY FA,FACILITY_WORKHOURS FW where FA.FA_Name = FW.FA_Name order by FA.FA_Name; // Για ενημέρωση ως προς τις ώρες λειτουργίας και την χωρητικότητα των διάφορων υποδομών της κατασκήνωσης.
+
+
+
+3.1.1
+ΘΈΛΟΥΝ ΔΙΟΡΘΩΣΗ ΟΙ ΕΓΓΡΑΦΕΣ - done
+ONLY JOIN:
+SELECT CE_NAME,CE_SURNAME,R.A_Name,CE_ROLE FROM CAMP_EMPLOYEE CE JOIN RESPONSIBLE R ON CE.CE_SSN = R.CE_SSN;   // Για ενημέρωση των κατασκηνωτών ποιός ο υπέυθυνος για κάθε δραστηριότητα. 
+LEFT OUTER JOIN:
+SELECT CE_NAME,CE_SURNAME,R.A_Name,CE_ROLE FROM CAMP_EMPLOYEE CE LEFT OUTER JOIN RESPONSIBLE R ON CE.CE_SSN = R.CE_SSN;
+
+3.1.2
+//SELECT COUNT(CA.CA_SSN) FROM CAMPER CA ,CA_ALLERGY CAA WHERE CA.CA_SSN = CAA.CA_SSN AND Allergy = "Mpiskota"; //- Δεν θα το χρησιμοποιήσουμε.
+SELECT COUNT(CA_SSN) from CAMPER;   // Υπολογισμός αριθμού κατασκηνωτών με σκοπό την παρασκευή μερίδων φαγητού.
+SELECT max(CA_Age),min(CA_Age),avg(CA_Age) FROM CAMPER CA WHERE CT_NAME = "Tilemaxos"; // Για να χωριστούν σε ομάδες οι κατασκηνωτές από ένα συγκεκριμενο σπιτάκι με βάση την ηλικία.
+
+3.1.3
+any ideas?
+group by, group by + having
+
+
+3.2 and 3.3 done
+Check DB3.md
+
+
+3.4
+Χρήστος
+b Συνήθως στου πινακες με πολλά γνωρισματα και που χρησιμοποιούνται συχνά σε queries
+c Με create view μηχανισμος ασφαλειας και δικαιοδοσίας(πχ μπορούμε ενα ερώτημα για τον γιατρο της κατασκήνωσης ναα επιστρέφει ολες τις πληροφοριες για αλλεγιες, ασθενιες, ονομα κατασκηνωτή, τηλ γιατρου)
+
+3.5
+Ηλίας
